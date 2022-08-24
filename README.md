@@ -1,7 +1,7 @@
 # Stack Memory And Heap Space
 
 Java-da yaddaşın idarə edilməsi mühüm prosesdir. Java tərəfindən avtomatik idarə olunur. JVM yaddaşı iki hissəyə bölür: Stack yaddaşı və Heap yaddaş. Java baxımından hər ikisi vacib yaddaş sahələridir, lakin hər ikisi fərqli məqsədlər üçün istifadə olunur. Stack yaddaşı ilə Heap yaddaşı arasındakı əsas fərq ondan ibarətdir ki, Stack yaddaşı obyektləri saxlayır və dinamik yaddaşın ayrılması və boşaldılmasından istifadə edərkən, Heap metodun icrası qaydasını və local dəyişənləri saxlamaq üçün istifadə olunur.
-
+OutOfMemory Error Heap-de baş verir . StackOverFlow isə Stack-də yaddaşın dolması zamanı baş verir
 # Stack nədir ?
 
 Stack yaddaşı, işləmə zamanı hər bir thread üçün ayrılmış fiziki bir yerdir (RAM-da). Bir thread yarandıqda eyni zamanda stack də yaradılır. Stack-də yaddaşın idarə edilməsi LIFO  prinsipinə uyğundur . O, dəyişənləri(int , long , boolean , char , byte , double , float) , method-ları və obyekt reference-larını saxlayır. Stack üçün ayrılmış yaddaş funksiya geri qayıdana qədər yaşayır. Yəni obyektlərin yaradılması üçün yer yoxdursa, o, java.lang.StackOverFlowError-u atır.  JVM hər thread üçün ayrıca stack yaradır.
@@ -29,6 +29,7 @@ Bu dəyişən tiplərinin stack/heap yerləşmələri tamamilə fərqlidir :
 Primitive types :
 + Nümunə 1 :
 ![img_5.png](photos2/img_5.png)
+
 OUTPUT : 56
 
 ![img_6.png](photos2/img_6.png)
@@ -64,6 +65,7 @@ Yəni burada sehir1-in qiyməti sehir2-in qiymətinə bərabərdir . Reference b
 Sxemden göründüyu kimi String-ə yeni bir dəyər verdikdə o yaddaşda yeni bir yer açır yəni əvvəlki dəyəri dəyişib üstünə yazmır .
 O əvvəlki dəyərin olduğu hissəni isə GC təmizliyir . Bizim nümunəmizdə isə hemin yeri göstərən bir reference var deyə silinmir
 ![img_14.png](photos2/img_14.png)
+
 Buda String-in iş prinsipinə aid digər nümunədir
 
 
@@ -94,6 +96,7 @@ String-lər new keyword-ü ilə yazıldıqda her bir string üçün heap-de fər
 + Nümunə 1 :
 
 ![img_19.png](photos2/img_19.png)
+
 + Nümunə 2 :
 
 ![img_22.png](photos3/img_22.png)
@@ -121,8 +124,10 @@ Class-lar reference type sayılır.
 
 + Nümunə 1 :
 ![img_27.png](photos3/img_27.png)
+
 + OUTPUT : limon
 ![img_28.png](photos3/img_28.png)
+
 Bu nümunədə user1-in adresi user2-in adresine bərabər olur . Bu bərabərlikdən sonra bağlandı qalır . Yəni həm user1 həmdə user2 eyni yeri göstərir. Heap-dəki 111 ünvanını göstərən heç bir reference olmadığından GC onu təmizliyir .
 
 
@@ -152,6 +157,7 @@ Burada reference-ları dəyişdirdik .
 ![img_3.png](photos3/img_3.png)
 ![img_4.png](photos3/img_4.png)
 ![img_5.png](photos3/img_5.png)
+
 Sxemde : alma = user1(copy)  ,armud = user2(copy)
 
 Yəni method içində reference-ları dəyişsəkdə bu yalnız yalnız həmin method içində geçerli sayılır . Method-dan kənarda isə dəyişməz qalır . Ancaq method içində reference-dən istifadə edərək fieldları , state-ləri dəyişə bilərik .  Və bu dəyişikliklər method-dan kənarda da geçerli olur
@@ -167,3 +173,6 @@ Yəni method içində reference-ları dəyişsəkdə bu yalnız yalnız həmin m
 
 
 # Garbage Collector
+
+Java-da Zibil Toplama necə işləyir?
+Java zibilinin yığılması avtomatik bir prosesdir. Avtomatik zibil yığılması yığın yaddaşına baxmaq, hansı obyektlərin istifadədə olub, hansının olmadığını müəyyən etmək və istifadə olunmamış obyektləri silmək prosesidir. İstifadədə olan obyekt və ya istinad edilən obyekt o deməkdir ki, proqramınızın bəzi hissəsi hələ də həmin obyektin göstəricisini saxlayır. İstifadə edilməmiş və ya istinad edilməmiş obyektə artıq proqramınızın heç bir hissəsi istinad etmir. Beləliklə, istinad edilməmiş obyekt tərəfindən istifadə edilən yaddaş geri qaytarıla bilər. Proqramçıya açıq şəkildə silinəcək obyektləri qeyd etməyə ehtiyac yoxdur. Zibil toplama tətbiqi JVM-də yaşayır.
