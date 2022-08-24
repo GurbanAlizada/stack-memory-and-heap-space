@@ -89,4 +89,29 @@ String-lər new keyword-ü ilə yazıldıqda her bir string üçün heap-de fər
 ![img_18.png](img_18.png)
  
 
+# Integer
+
++ Nümunə 1 :
+
+![img_19.png](img_19.png)
++ Nümunə 2 :
+
+![img_22.png](img_22.png)
+![img_21.png](img_21.png)
+
 # Arrays
+
+Array-lər reference type-dır . 
+
++ Nümunə 1 :
+![img_25.png](img_25.png)
+![img_26.png](img_26.png)
+
+Burada sayialar1-in adresi sayilar2-in adresine bərabər olur . Yəni bu bərabərlikdən sonrada bunlar arasında bağlantı qalır . Buna görədə bir reference-ı dəyişdikdə digəridə bundan təsirlənir . Heap-dəki 101 xanası isə onu tutan reference olmadığından GC tərəfindən silinir . 
+
++ Nümunə 2 :
+![img_23.png](img_23.png)
+![img_24.png](img_24.png)
+
+Eyni proses burada da baş  verir . Array-in reference type olduğunu buradanda gördük .
+
