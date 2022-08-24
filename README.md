@@ -115,3 +115,23 @@ Burada sayialar1-in adresi sayilar2-in adresine bərabər olur . Yəni bu bərab
 
 Eyni proses burada da baş  verir . Array-in reference type olduğunu buradanda gördük .
 
+#  Classes
+
+Class-lar reference type sayılır.
+
++ Nümunə 1 :
+![img_27.png](img_27.png)
++ OUTPUT : limon
+![img_28.png](img_28.png)
+Bu nümunədə user1-in adresi user2-in adresine bərabər olur . Bu bərabərlikdən sonra bağlandı qalır . Yəni həm user1 həmdə user2 eyni yeri göstərir. Heap-dəki 111 ünvanını göstərən heç bir reference olmadığından GC onu təmizliyir .
+
+
++ Nümunə 2 : 
+![img_29.png](img_29.png)
+![img_30.png](img_30.png)
+![img_31.png](img_31.png)
+
+Yəni burada method içində user-ın kopyası üzərində aparılan hər dəyişiklik user-a da təsir edəcək .
+
+# Java pass by value 
+
