@@ -141,26 +141,26 @@ Yəni burada method içində user-ın kopyası üzərində aparılan hər dəyi�
 
 
 + Nümunə 1 :
-![img.png](img.png)
-![img_1.png](img_1.png)
-![img_2.png](img_2.png)
+![img.png](photos3/img.png)
+![img_1.png](photos3/img_1.png)
+![img_2.png](photos3/img_2.png)
 
 Burada reference-ları dəyişdirdik .
 
 + Nümunə 2 : indi isə pass by value hissəsinə gələk
 
-![img_3.png](img_3.png)
-![img_4.png](img_4.png)
-![img_5.png](img_5.png)
+![img_3.png](photos3/img_3.png)
+![img_4.png](photos3/img_4.png)
+![img_5.png](photos3/img_5.png)
 Sxemde : alma = user1(copy)  ,armud = user2(copy)
 
 Yəni method içində reference-ları dəyişsəkdə bu yalnız yalnız həmin method içində geçerli sayılır . Method-dan kənarda isə dəyişməz qalır . Ancaq method içində reference-dən istifadə edərək fieldları , state-ləri dəyişə bilərik .  Və bu dəyişikliklər method-dan kənarda da geçerli olur
 
 + Nümunə 3 :
 
-![img_6.png](img_6.png)
-![img_7.png](img_7.png)
-![img_8.png](img_8.png)
+![img_6.png](photos3/img_6.png)
+![img_7.png](photos3/img_7.png)
+![img_8.png](photos3/img_8.png)
 
 Əslində, methoda baxıldıqda, user reference-nın kopyası bu method-a ötürülür. Bu copy reference da orijinal reference kimi yaddaşda yer tutur və orijinal reference kimi heap sahəsindəki eyni obyektə işarə edir.  Copy reference yerinə yetirilən əməliyyatlar stack sahəsində reference-ın göstərdiyi obyektə də təsir edəcək. Amma bu, reference-ın dəyərinə, yəni heap sahəsində göstərdiyi obyektin ünvanına təsir etməyəcək . Verilən misalda copy reference (user copy) tərəfindən saxlanılan obyekt metod daxilində yeni obyekt təyin edilməklə dəyişdirilmişdir, baxmayaraq ki, o, metoda ilk dəfə ötürülən zaman orijinal reference eyni dəyəri saxlamışdır. Təbii ki, bu dəyişiklik orijinal reference-a təsir göstərmir.
 
